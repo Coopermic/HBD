@@ -30,7 +30,7 @@ body {
     align-items: flex-start;
     gap: 30px;
     margin-top: 30px;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Permite que os elementos se ajustem */
     animation: fadeIn 2s ease-out;
 }
 
@@ -110,6 +110,7 @@ body {
     60% { transform: scale(1.2); opacity: 1; }
     100% { transform: scale(1); }
 }
+
 /* Animação de tremor */
 @keyframes shake {
     0% { transform: translateX(0); }
@@ -121,4 +122,79 @@ body {
 
 .shake-effect {
     animation: shake 0.5s;
+}
+
+/* ----------- Responsividade para dispositivos móveis ----------- */
+
+/* Para telas pequenas (até 600px de largura) */
+@media screen and (max-width: 600px) {
+    /* Ajustando o título */
+    h1 {
+        font-size: 2em; /* Menor tamanho de fonte para telas pequenas */
+    }
+
+    /* Ajustando o layout do vídeo e GIF para empilharem verticalmente */
+    .media-container {
+        flex-direction: column; /* Coloca o vídeo e o GIF um abaixo do outro */
+        gap: 20px; /* Menor espaço entre eles */
+    }
+
+    /* Ajustando o tamanho do vídeo */
+    .video-container iframe {
+        width: 100%; /* O vídeo ocupa toda a largura disponível */
+        height: 250px; /* Ajusta a altura proporcionalmente */
+    }
+
+    /* Ajustando o tamanho do GIF */
+    .trex {
+        width: 200px; /* Reduzindo o tamanho do GIF */
+    }
+
+    /* Ajustando o controle de áudio */
+    .audio-controls {
+        margin-top: 10px;
+    }
+
+    .now-container {
+        width: 100%; /* A imagem ocupa toda a largura disponível */
+        justify-content: center; /* Centraliza a imagem */
+    }
+
+    .now-image {
+        width: 150px; /* Ajustando o tamanho da imagem */
+    }
+}
+
+/* Para telas médias (de 601px até 1024px de largura) */
+@media screen and (max-width: 1024px) {
+    /* Ajustando o título */
+    h1 {
+        font-size: 2.5em; /* Ajuste intermediário para dispositivos maiores */
+    }
+
+    /* Ajustando o layout do vídeo e GIF para empilharem verticalmente */
+    .media-container {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    /* Ajustando o tamanho do vídeo */
+    .video-container iframe {
+        width: 90%; /* O vídeo ocupa 90% da largura */
+        height: 500px; /* Ajuste proporcional */
+    }
+
+    /* Ajustando o tamanho do GIF */
+    .trex {
+        width: 250px; /* Ajuste no tamanho do GIF */
+    }
+
+    .now-container {
+        width: 90%; /* A imagem ocupa 90% da largura */
+        justify-content: center;
+    }
+
+    .now-image {
+        width: 200px; /* Ajuste do tamanho da imagem */
+    }
 }
